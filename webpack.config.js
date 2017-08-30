@@ -9,7 +9,7 @@ var plugins = [];
 if(env !== 'dev'){
   plugins = [
     new webpack.optimize.UglifyJsPlugin({
-      //sourceMap: true,
+      sourceMap: true,
       minimize: true,
       compressor: {warnings: false},
     }),
@@ -40,4 +40,6 @@ module.exports = {
   resolve: {
     modules: ['src', 'node_modules'],
   },
-}
+
+  devtool: 'source-map',
+};
